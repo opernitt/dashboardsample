@@ -12,7 +12,7 @@ This sample UI demonstrates various Qt features:
 * Signal/Slot signaling
 * State changes
 * Dynamic loading (qrc:/)
-* Dynamic contents generation based on data (Json file with mock-up EPG data)
+* Dynamic contents generation based on data (Json file with mock-up App store)
 * Transitioning
 * Animations
 * UI Navigation (swipe, mouse, keyboard)
@@ -24,11 +24,8 @@ Qt 5.9.x
 ```
 
 ## Navigating the Sample App
-From the main screen, Settings can be opened with a Swipe. The Menu can be opened with the SPACE bar.
-Using a mouse on the Menu, a few items are available: EPG, AppStore and Settings.
-In the EPG Guide, mock data is displayed for a few TV stations. An item can be clicked to display details.
-To close the details view, it can be clicked with the mouse.
-The current screen (EPG or AppStore) can be closed using the BACK key, or by selecting another Menu option.
+From the main screen, a mock App Store and Settings can be opened with a Swipe to the right or left.
+The main screen shows a basic dashboard, which can be animated using the mouse key or touch on a handheld device (such as Raspberry Pi with touchscreen display).
 
 ## Missing items and next steps in this project
 This project was put together quickly to demonstrate some of Qt's capabilities. The following items will be implemented next:
