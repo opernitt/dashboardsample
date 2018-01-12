@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Settings.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>LogoSplash.qml</file>
+        <file>Dashboard.qml</file>
+        <file>Apps.qml</file>
+        <file alias="img/bg.jpg">img/bg480x320a.jpg</file>
+        <file>img/instagram_225x225.jpg</file>
+        <file alias="img/logo.jpg">img/logo.2010.polaris-industries.blue__2.jpg</file>
+        <file>img/maps_225x225.png</file>
+        <file>img/mercedes-benz-logo.jpg</file>
+        <file>img/pinterest_225x225.png</file>
+        <file alias="img/bgpolaris.jpg">img/polarisbg480x320.jpg</file>
+        <file>img/radio_225x225.jpg</file>
+        <file>img/spotify_225x225.jpg</file>
+        <file>img/tunein_225x225.jpg</file>
+        <file>GlowText.qml</file>
+        <file>apps.json</file>
+        <file>Global.qml</file>
+        <file>qmldir</file>
+        <file>img/fuel-icon.png</file>
+        <file>img/temperature-icon.png</file>
+        <file>IconGaugeStyle.qml</file>
+        <file>DashboardGaugeStyle.qml</file>
+        <file>TurnIndicator.qml</file>
+        <file>TachometerStyle.qml</file>
+        <file>App.qml</file>
+    </qresource>
+</RCC>
