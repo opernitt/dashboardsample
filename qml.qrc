@@ -26,6 +26,7 @@
         <file>DashboardGaugeStyle.qml</file>
         <file>TurnIndicator.qml</file>
         <file>TachometerStyle.qml</file>
-        <file>App.qml</file>
+        <file>AppItem.qml</file>
+        <file>AppMessageBox.qml</file>
     </qresource>
 </RCC>

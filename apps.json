@@ -1,36 +1,36 @@
 {
-    "Apps": [
+    "apps": [
         {
-            "Name": "Maps",
-            "Icon": "maps_225x225.png",
+            "name": "Maps",
+            "icon": "maps_225x225.png",
             "url": "",
-            "Desc": "Maps App"
+            "desc": "Maps App"
         },
         {
-            "Name": "TuneIn",
-            "Icon": "tunein_225x225.jpg",
+            "name": "TuneIn",
+            "icon": "tunein_225x225.jpg",
             "url": "",
-            "Desc": "Streaming App"
+            "desc": "Streaming App"
         },        {
-            "Name": "Radio",
-            "Icon": "radio_225x225.jpg",
+            "name": "Radio",
+            "icon": "radio_225x225.jpg",
             "url": "",
-            "Desc": "Radio App"
+            "desc": "Radio App"
         },        {
-            "Name": "Instagram",
-            "Icon": "instagram_225x225.jpg",
+            "name": "Instagram",
+            "icon": "instagram_225x225.jpg",
             "url": "",
-            "Desc": "Instagram App"
+            "desc": "Instagram App"
         },        {
-            "Name": "Pinterest",
-            "Icon": "pinterest_225x225.png",
+            "name": "Pinterest",
+            "icon": "pinterest_225x225.png",
             "url": "",
-            "Desc": "Pinterest App"
+            "desc": "Pinterest App"
         },        {
-            "Name": "Spotify",
-            "Icon": "spotify_225x225.jpg",
+            "name": "Spotify",
+            "icon": "spotify_225x225.jpg",
             "url": "",
-            "Desc": "Spotify App"
+            "desc": "Spotify App"
         }
     ]
 }
