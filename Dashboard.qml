@@ -28,13 +28,28 @@ import QtQuick 2.2
 import QtQuick.Window 2.2
 import QtQuick.Extras 1.4
 import QtQuick.Controls.Styles 1.4
-import "." // Import Global settings module
+import io.dtv.uisettings 1.0
+import "." // Import Global module
 
 Item {
     id: root
     Rectangle {
         color: "#161616"
         anchors.fill: parent
+    }
+
+    Text {
+        text: qsTr("Touch the screen to \"accelerate\"") + uiSettings.emptyString
+        color: Global.darkBlue
+        x: 10
+        y: 10
+    }
+
+    Text {
+        text: qsTr("Swipe for apps/settings") + uiSettings.emptyString
+        color: Global.darkBlue
+        x: 10
+        y: 28
     }
 
     MouseArea {
@@ -237,6 +252,11 @@ Item {
             Global.gear = !speedGauge.value ? "N" : parseInt(Global.gears*(speedGauge.value-1)/speedGauge.maximumValue+1).toString()
             //console.log("Speed: " + Global.speed + ", gear: " + Global.gear);
         }
+    }
+
+    // UiSettings provides emptyString(), which is updated when the language changes
+    UiSettings {
+        id: uiSettings
     }
 
     // Handle Settings changes

@@ -14,9 +14,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     src/fileio.cpp \
-    src/main.cpp
+    src/main.cpp \
+    src/uisettings.cpp
 
 RESOURCES += qml.qrc
+TRANSLATIONS = dashboard_de.ts
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -30,4 +32,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    src/fileio.h
+    src/fileio.h \
+    src/uisettings.h
+
+DISTFILES += \
+    dashboard_de.ts

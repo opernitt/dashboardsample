@@ -30,7 +30,7 @@ import QtQuick 2.2
 Rectangle {
     id: screen
     anchors.fill: parent
-    color: "white"
+    color: "#f6f6f6" //"white"
 
     MouseArea {
         id: mouseArea

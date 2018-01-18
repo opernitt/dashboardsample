@@ -78,4 +78,22 @@ ApplicationWindow {
         id: logoSplash
         anchors.fill: parent
     }
+
+    // Handle Settings changes
+    Connections {
+        // Update the speed and gear
+        target: Global
+        onMetricUnitsChanged: {
+            console.log("Metric units: " + Global.metricUnits);
+            metricsChanged(Global.metricUnits)
+        }
+        onLanguageChanged: {
+            console.log("Language: " + Global.language);
+            languageSelected(Global.language)
+        }
+    }
+
+    // Signals
+    signal languageSelected(string item)    // UI Language is selected
+    signal metricsChanged(bool metricUnits) // UI Units changed (metric vs. standard)
 }

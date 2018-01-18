@@ -29,8 +29,10 @@ import QtQuick 2.2
 
 // Global
 QtObject {
+    id: global
+
     // Global Settings
-    property string language: "English"
+    property string language: "en"
     property bool metricUnits: false
     property bool other: false
 
@@ -47,7 +49,4 @@ QtObject {
     // Corporate Identity (C.I.) constants
     property string darkBlue: "#004a8d"
     property int fontSize: 24
-
-    signal metricsChanged(bool metricUnits)
-    onMetricUnitsChanged: metricsChanged(metricUnits);
 }

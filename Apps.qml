@@ -26,7 +26,8 @@
 
 import QtQuick 2.2
 import QtQuick.Layouts 1.3
-import FileIO 1.0
+import io.dtv.fileio 1.0
+import io.dtv.uisettings 1.0
 
 Item {
     id: root
@@ -53,12 +54,12 @@ Item {
     }
 
     GlowText {
-        text: qsTr("Apps")
+        text: qsTr("Apps") + uiSettings.emptyString
         color: Global.darkBlue
         pixelSize: Global.fontSize
         x: 10
         y: 10
-        width: 100
+        width: 280
         height: 36
     }
 
@@ -67,6 +68,28 @@ Item {
         id: jsonFile
         source: ""
         onError: console.log(msg)
+    }
+
+    // UiSettings provides emptyString(), which is updated when the language changes
+    UiSettings {
+        id: uiSettings
+    }
+
+    // Signal when an app is launched
+    signal appLaunched(string icon, string name, string desc, string url)
+
+    // Handle when an app is launched
+    onAppLaunched: {
+
+        console.log("Launching App " + name)
+
+        // Make sure we have a valid url
+        if (url.length) {
+
+        }
+        else {
+            messageBox(icon, name, desc, qsTr("Does not provide a valid url!") + uiSettings.emptyString)
+        }
     }
 
     // Set up the Apps grid when the UI is loaded
@@ -153,23 +176,6 @@ Item {
         var data = jsonFile.read()
         //print(data);
         return data
-    }
-
-    // Signal when an app is launched
-    signal appLaunched(string icon, string name, string desc, string url)
-
-    // Handle when an app is launched
-    onAppLaunched: {
-
-        console.log("Launching App " + name)
-
-        // Make sure we have a valid url
-        if (url.length) {
-
-        }
-        else {
-            messageBox(icon, name, desc, "Does not provide a valid url!")
-        }
     }
 
     AppMessageBox {

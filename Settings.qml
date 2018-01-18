@@ -28,29 +28,36 @@ import QtQuick 2.2
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.3
+import io.dtv.uisettings 1.0
 
 Item {
     id: settings
 
+    Rectangle {
+        //color: "#161616"
+        color: "#f8f8f8"
+        anchors.fill: parent
+    }
+
     Image {
         id: bgimage
-        source: "img/bgpolaris.jpg"
-        opacity: .4
+        source: "img/bg.jpg"
+        opacity: .5 //.25
         anchors.fill: parent
     }
 
     GlowText {
-        text: qsTr("Settings")
+        text: qsTr("Settings") + uiSettings.emptyString
         color: Global.darkBlue
         pixelSize: Global.fontSize
         x: 10
         y: 10
-        width: 100
+        width: 280
         height: 36
     }
 
     GroupBox {
-        title: "Units"
+        title: qsTr("Units") + uiSettings.emptyString
         x: 15
         y: 50
 
@@ -60,14 +67,14 @@ Item {
                 text: "mph"
                 checked: Global.metricUnits === false
                 exclusiveGroup: tabUnitsGroup
-                style: RadioButtonStyle {
+                style: SettingsRadioButtonStyle {
                 }
             }
             RadioButton {
                 text: "km/h"
                 checked: Global.metricUnits === true
                 exclusiveGroup: tabUnitsGroup
-                style: RadioButtonStyle {
+                style: SettingsRadioButtonStyle {
                 }
                 onCheckedChanged: Global.metricUnits = checked
             }
@@ -75,7 +82,7 @@ Item {
     }
 
     GroupBox {
-        title: "Language"
+        title: qsTr("Language") + uiSettings.emptyString
         x: 15
         y: 100
 
@@ -83,22 +90,39 @@ Item {
             ExclusiveGroup { id: tabLanguageGroup }
             RadioButton {
                 text: "English"
-                checked: true
+                checked: Global.language === "en"
                 exclusiveGroup: tabLanguageGroup
+                style: SettingsRadioButtonStyle {
+                }
+                onCheckedChanged: if (checked === true) Global.language = "en"
+            }
+            RadioButton {
+                text: "Deutsch"
+                checked: Global.language === "de"
+                exclusiveGroup: tabLanguageGroup
+                style: SettingsRadioButtonStyle {
+                }
+                onCheckedChanged: if (checked === true) Global.language = "de"
             }
         }
     }
 
     GroupBox {
-        title: "Other"
+        title: qsTr("Other") + uiSettings.emptyString
         x: 15
         y: 150
 
         RowLayout {
             CheckBox {
-                text: "On"
+                //: On as in turning on an option
+                text: qsTr("On")
                 checked: Global.other
             }
         }
+    }
+
+    // UiSettings provides emptyString, which is updated when the language changes
+    UiSettings {
+        id: uiSettings
     }
 }
